@@ -17,16 +17,20 @@ public class AddressService implements AddressServiceInterface {
     @Autowired
     private AddressRepository addressRepository;
 
-    public int countCEP = 8;
-
     public Address findAddressByCEP(String cep){
-        Optional<Address> address = addressRepository.findByCep(cep);
-        if(!address.isPresent() && countCEP!= 0){
-            countCEP--;
-            findAddressByCEP(CEPUtil.returnCEP(cep, countCEP));
-        }
-        return address.orElseThrow(() -> new ObjectNotFoundException("CEP Inválido"));
+        int indexCEP = cep.length();
+        Optional<Address> address = recursiveVerifyCEP(cep, indexCEP);
+        return address.orElseThrow(() -> new ObjectNotFoundException(
+                "Objeto não encontrado! Id: , Tipo: " + Address.class.getName()));
     }
 
 
+    private Optional<Address> recursiveVerifyCEP(String cep, int indexCEP){
+        Optional<Address> address = addressRepository.findByCep(cep);
+        if(address.isEmpty() && indexCEP!= 0){
+            indexCEP--;
+            return recursiveVerifyCEP(CEPUtil.returnCEP(cep, indexCEP), indexCEP);
+        }
+        return address;
+    }
 }

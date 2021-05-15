@@ -29,5 +29,14 @@ public class DBService {
         stateRepository.save(state);
         cityRepository.save(city);
         addressRepository.save(address);
+
+
+        State state2 = new State(null, "Rio de Janeiro");
+        City city2 = new City(null, "Rio de Janeiro", state2);
+        Address address2 = new Address(null,"Rua Santos ", "Ipanema", "15400000", city2);
+
+        stateRepository.save(state2);
+        cityRepository.save(city2);
+        addressRepository.save(address2);
     }
 }
