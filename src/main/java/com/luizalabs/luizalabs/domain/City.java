@@ -2,7 +2,6 @@ package com.luizalabs.luizalabs.domain;
 import javax.persistence.*;
 import java.util.Objects;
 
-
 @Entity
 public class City {
 
