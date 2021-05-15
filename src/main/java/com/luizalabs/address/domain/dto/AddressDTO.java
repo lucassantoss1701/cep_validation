@@ -65,4 +65,9 @@ public class AddressDTO {
         this.city = city;
     }
 
+
+    public Address toEntity() {
+        return new Address(this.id,this.road , this.district,this.cep, this.city);
+    }
+
 }

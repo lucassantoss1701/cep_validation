@@ -23,6 +23,12 @@ public class AddressService implements AddressServiceInterface {
         return address.orElseThrow(() -> new ObjectNotFoundException("CEP Inválido!"));
     }
 
+    @Override
+    public Address insertNewAdress(Address address) {
+        address.setId(null);
+        return addressRepository.save(address);
+    }
+
     private Optional<Address> recursiveVerifyCEP(String cep, int indexCEP){
         Optional<Address> address = addressRepository.findByCep(cep);
         if(address.isEmpty() && indexCEP!= 0){

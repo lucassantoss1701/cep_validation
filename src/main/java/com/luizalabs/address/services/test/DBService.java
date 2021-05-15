@@ -23,8 +23,8 @@ public class DBService {
 
     public void instantitateDatabase(){
         State state = new State(null, "São Paulo");
-        City city = new City(null, "Artur Nogueira", state);
-        Address address = new Address(null,"Rua Albertino Stocco", "Coração Criança", "13167616", city);
+        City city = new City(null, "Franca", state);
+        Address address = new Address(null,"Rua Magalu", "LuizaLabs", "13167777", city);
 
         stateRepository.save(state);
         cityRepository.save(city);
