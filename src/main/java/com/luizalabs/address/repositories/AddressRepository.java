@@ -1,6 +1,6 @@
-package com.luizalabs.luizalabs.repositories;
+package com.luizalabs.address.repositories;
 
-import com.luizalabs.luizalabs.domain.Address;
+import com.luizalabs.address.domain.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

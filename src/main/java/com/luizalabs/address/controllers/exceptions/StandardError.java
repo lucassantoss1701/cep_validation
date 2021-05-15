@@ -1,4 +1,4 @@
-package com.luizalabs.luizalabs.controllers.exceptions;
+package com.luizalabs.address.controllers.exceptions;
 
 public class StandardError {
     private Integer status;

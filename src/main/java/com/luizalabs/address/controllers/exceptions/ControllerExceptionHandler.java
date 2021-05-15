@@ -1,6 +1,6 @@
-package com.luizalabs.luizalabs.controllers.exceptions;
+package com.luizalabs.address.controllers.exceptions;
 
-import com.luizalabs.luizalabs.services.excepetions.ObjectNotFoundException;
+import com.luizalabs.address.services.excepetions.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

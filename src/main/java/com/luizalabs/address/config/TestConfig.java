@@ -1,6 +1,6 @@
-package com.luizalabs.luizalabs.config;
+package com.luizalabs.address.config;
 
-import com.luizalabs.luizalabs.services.test.DBService;
+import com.luizalabs.address.services.test.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

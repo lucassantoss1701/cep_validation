@@ -1,4 +1,4 @@
-package com.luizalabs.luizalabs.services.util;
+package com.luizalabs.address.services.util;
 
 public class CEPUtil {
 

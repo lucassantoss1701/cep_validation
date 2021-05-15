@@ -1,4 +1,4 @@
-package com.luizalabs.luizalabs.domain;
+package com.luizalabs.address.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

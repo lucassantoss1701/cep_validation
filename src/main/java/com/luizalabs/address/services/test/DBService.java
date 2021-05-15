@@ -1,11 +1,11 @@
-package com.luizalabs.luizalabs.services.test;
+package com.luizalabs.address.services.test;
 
-import com.luizalabs.luizalabs.domain.Address;
-import com.luizalabs.luizalabs.domain.City;
-import com.luizalabs.luizalabs.domain.State;
-import com.luizalabs.luizalabs.repositories.AddressRepository;
-import com.luizalabs.luizalabs.repositories.CityRepository;
-import com.luizalabs.luizalabs.repositories.StateRepository;
+import com.luizalabs.address.domain.Address;
+import com.luizalabs.address.domain.City;
+import com.luizalabs.address.domain.State;
+import com.luizalabs.address.repositories.AddressRepository;
+import com.luizalabs.address.repositories.CityRepository;
+import com.luizalabs.address.repositories.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

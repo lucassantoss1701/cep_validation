@@ -1,4 +1,4 @@
-package com.luizalabs.luizalabs;
+package com.luizalabs.address;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

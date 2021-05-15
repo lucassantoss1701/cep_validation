@@ -1,4 +1,4 @@
-package com.luizalabs.luizalabs;
+package com.luizalabs.address;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

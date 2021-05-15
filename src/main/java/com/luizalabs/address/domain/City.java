@@ -1,4 +1,4 @@
-package com.luizalabs.luizalabs.domain;
+package com.luizalabs.address.domain;
 import javax.persistence.*;
 import java.util.Objects;
 

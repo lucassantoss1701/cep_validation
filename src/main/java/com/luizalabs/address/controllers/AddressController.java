@@ -1,7 +1,8 @@
-package com.luizalabs.luizalabs.controllers;
+package com.luizalabs.address.controllers;
 
-import com.luizalabs.luizalabs.domain.Address;
-import com.luizalabs.luizalabs.services.interfaces.AddressServiceInterface;
+import com.luizalabs.address.domain.Address;
+import com.luizalabs.address.domain.dto.AddressDTO;
+import com.luizalabs.address.services.interfaces.AddressServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,10 @@ public class AddressController {
     @Autowired
     private AddressServiceInterface addressService;
 
-    @GetMapping(value = "/cep")
-    public ResponseEntity<Address> findAddressByCEP(@RequestBody Address addressWithCep){
+    @GetMapping(value = "/ceps")
+    public ResponseEntity<AddressDTO> findAddressByCEP(@RequestBody AddressDTO addressWithCep){
         Address address = addressService.findAddressByCEP(addressWithCep.getCep());
-        return ResponseEntity.ok().body(address);
+        AddressDTO addressDTO = new AddressDTO(address);
+        return ResponseEntity.ok().body(addressDTO);
     }
 }

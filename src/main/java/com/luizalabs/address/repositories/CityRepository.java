@@ -1,6 +1,6 @@
-package com.luizalabs.luizalabs.repositories;
+package com.luizalabs.address.repositories;
 
-import com.luizalabs.luizalabs.domain.City;
+import com.luizalabs.address.domain.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CityRepository extends JpaRepository<City, Integer> {

@@ -1,11 +1,11 @@
-package com.luizalabs.luizalabs.services;
+package com.luizalabs.address.services;
 
 
-import com.luizalabs.luizalabs.domain.Address;
-import com.luizalabs.luizalabs.repositories.AddressRepository;
-import com.luizalabs.luizalabs.services.excepetions.ObjectNotFoundException;
-import com.luizalabs.luizalabs.services.interfaces.AddressServiceInterface;
-import com.luizalabs.luizalabs.services.util.CEPUtil;
+import com.luizalabs.address.domain.Address;
+import com.luizalabs.address.repositories.AddressRepository;
+import com.luizalabs.address.services.excepetions.ObjectNotFoundException;
+import com.luizalabs.address.services.interfaces.AddressServiceInterface;
+import com.luizalabs.address.services.util.CEPUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,10 +20,8 @@ public class AddressService implements AddressServiceInterface {
     public Address findAddressByCEP(String cep){
         int indexCEP = cep.length();
         Optional<Address> address = recursiveVerifyCEP(cep, indexCEP);
-        return address.orElseThrow(() -> new ObjectNotFoundException(
-                "Objeto não encontrado! Id: , Tipo: " + Address.class.getName()));
+        return address.orElseThrow(() -> new ObjectNotFoundException("CEP Inválido!"));
     }
-
 
     private Optional<Address> recursiveVerifyCEP(String cep, int indexCEP){
         Optional<Address> address = addressRepository.findByCep(cep);

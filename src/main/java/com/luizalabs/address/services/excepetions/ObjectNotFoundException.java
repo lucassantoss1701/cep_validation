@@ -1,4 +1,4 @@
-package com.luizalabs.luizalabs.services.excepetions;
+package com.luizalabs.address.services.excepetions;
 
 public class ObjectNotFoundException extends RuntimeException{
 
