@@ -18,6 +18,7 @@ public class Address {
     @JoinColumn(name = "city_id")
     private City city;
 
+
     public Address(){
 
     }
