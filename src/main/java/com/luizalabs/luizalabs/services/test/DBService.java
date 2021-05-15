@@ -29,6 +29,5 @@ public class DBService {
         stateRepository.save(state);
         cityRepository.save(city);
         addressRepository.save(address);
-
     }
 }
