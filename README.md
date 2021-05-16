@@ -5,18 +5,19 @@
 <p align="center">
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#comoUsar">Como utilizar</a> •
-  <a href="#java">Escolha da linguagem</a>
+ <a href="#java">Escolha da linguagem</a>
+ <a href="#arq">Arquitetura e como foi desenvolvido</a>
 </p>
 
 <h3 id="tecnologias"> Tecnologias </h3>
 
-<ul>
-  <li>Spring (data, security, web e test)</li>
-  <li>Banco em mémoria H2</li>
-  <li>JWT para autenticações</li>
-  <li> Java 11 </li>
-  <li> Maven 3.8.1</li>
-</ul>
+    <ul>
+      <li>Spring (data, security, web e test)</li>
+      <li>Banco em mémoria H2</li>
+      <li>JWT para autenticações</li>
+      <li> Java 11 </li>
+      <li> Maven 3.8.1</li>
+    </ul>
 
 
 <h3 id="comoUsar"> Como utilizar </h3>
@@ -114,3 +115,18 @@
 <h3 id="java"> Escolha do Java </h3>
 
 <p> Foi escolhida a linguagem Java para esse desenvolvimento por quê possuo uma maior familiaridade com ela, apesar de ter tipo uma vontade imensa de arriscar um node.js por conta de fazer muito tempo que não programo com essa linguagem, porém o prazo me fez recuar da ideia </p>
+
+<h3 id="arq"> Arquitetura e como foi desenvolvido </h3>
+<p> Esse projeto foi desenvolvido em um arquitetura monolítica usando o seguinte padrão de camadas</p>
+
+     <ul>
+       <li>Controllers: Camada responsável por armazenar os end-points da aplicação</li>
+       <li>Services: Camada responsável por cuidar das regras de négocio da aplicação</li>
+       <li>Domain: Camada que aloca as entidades da aplicação</li>
+       <li>Config: Camada de configuração da aplicação</li>
+       <li>Filters: Camada responsável por aplicar filtos de autenticação</li>
+       <li>Jwt: Camada responsável por fazer algumas configurações do JWT </li>
+     </ul>
+     
+  <p> Foi desenvolvido utilizando Spring boot, e com um banco de dados em mémoria para facilitar os testes da correção </p>
+
