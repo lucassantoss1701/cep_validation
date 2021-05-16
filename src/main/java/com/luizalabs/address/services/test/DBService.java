@@ -3,9 +3,11 @@ package com.luizalabs.address.services.test;
 import com.luizalabs.address.domain.Address;
 import com.luizalabs.address.domain.City;
 import com.luizalabs.address.domain.State;
+import com.luizalabs.address.domain.User;
 import com.luizalabs.address.repositories.AddressRepository;
 import com.luizalabs.address.repositories.CityRepository;
 import com.luizalabs.address.repositories.StateRepository;
+import com.luizalabs.address.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +15,16 @@ import org.springframework.stereotype.Service;
 public class DBService {
 
     @Autowired
-    AddressRepository addressRepository;
+    private AddressRepository addressRepository;
 
     @Autowired
-    CityRepository cityRepository;
+    private CityRepository cityRepository;
 
     @Autowired
-    StateRepository stateRepository;
+    private StateRepository stateRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public void instantitateDatabase(){
         State state = new State(null, "São Paulo");
@@ -38,5 +43,9 @@ public class DBService {
         stateRepository.save(state2);
         cityRepository.save(city2);
         addressRepository.save(address2);
+
+        User user = new User("Lucas", "lucassantoss", "$2a$10$4xuWUlQV05DrcAsMD7Zji.3tfM9sX25hjs5JDX43q3ajmDbb2jMRy");
+
+        userRepository.save(user);
     }
 }
