@@ -1,7 +1,6 @@
 package com.luizalabs.address.controllers;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.luizalabs.address.domain.Address;
 import com.luizalabs.address.domain.City;
@@ -10,11 +9,16 @@ import com.luizalabs.address.repositories.AddressRepository;
 import com.luizalabs.address.repositories.CityRepository;
 import com.luizalabs.address.repositories.StateRepository;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -38,11 +42,21 @@ public class AddressControllerTest {
     @Autowired
     private AddressRepository addressRepository;
 
+    @Autowired
+    private WebApplicationContext context;
+
+    @WithMockUser("/lucassantoss")
     @Test
     void should_address_by_cep() throws Exception {
         State state = new State(null, "São Paulo");
         City city = new City(null, "Artur Nogueira", state);
         Address address = new Address(null, "Rua Albertino Stocco", "Coração Criança", "13167616", city);
+
+
+
+        Authentication authentication = Mockito.mock(Authentication.class);
+        SecurityContext securityContext = Mockito.mock(SecurityContext.class);
+        Mockito.when(securityContext.getAuthentication()).thenReturn(authentication);
 
         stateRepository.save(state);
         cityRepository.save(city);
@@ -60,6 +74,7 @@ public class AddressControllerTest {
     }
 
 
+    @WithMockUser("/lucassantoss")
     @Test
     void should_address_by_cep_passing_cep_invalid_but_similar() throws Exception {
         State state = new State(null, "São Paulo");
@@ -82,6 +97,7 @@ public class AddressControllerTest {
     }
 
 
+    @WithMockUser("/lucassantoss")
     @Test
     void should_address_by_cep_passing_cep_invalid() throws Exception {
         State state = new State(null, "São Paulo");
