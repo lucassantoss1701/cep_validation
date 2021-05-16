@@ -5,7 +5,7 @@
 <p align="center">
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#comoUsar">Como utilizar</a> •
- <a href="#java">Escolha da linguagem</a>
+ <a href="#java">Escolha da linguagem</a> •
  <a href="#arq">Arquitetura e como foi desenvolvido</a>
 </p>
 
